@@ -1,0 +1,15 @@
+/* src/components/common/NotificationBubble.css */
+.notification-bubble {
+  display: inline-flex; /* Usar flexbox para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  background-color: var(--blue, #ff0015); /* Color azul */
+  color: white;
+  border-radius: 50%; /* Para que sea un círculo */
+  min-width: 24px; /* Ancho mínimo para números de un dígito */
+  height: 24px; /* Altura igual al ancho para círculo perfecto */
+  padding: 2px 6px; /* Ajusta el padding para espaciar el número */
+  font-size: 0.85rem; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+}

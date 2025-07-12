@@ -1,0 +1,210 @@
+/* src/components/product/ProductDetail.css */
+
+/* Estilos para el contenedor principal de la página de detalle */
+.product-detail-container {
+  background-color: #fff; /* Fondo blanco para el contenedor */
+  padding: 30px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+  margin-top: 40px; /* Margen superior para separación del encabezado */
+  margin-bottom: 40px; /* Margen inferior */
+}
+
+/* Estilos para la imagen principal del producto */
+.main-product-image {
+  width: 100%; /* Asegura que ocupe todo el ancho de su columna */
+  height: 450px; /* Altura fija para la imagen principal */
+  object-fit: contain; /* CRÍTICO: Escala la imagen para que quepa dentro del contenedor, manteniendo su relación de aspecto. No recorta. */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid #e0e0e0; /* Borde sutil */
+}
+
+/* Estilos para hacer la imagen principal clickeable y añadir efecto */
+.clickable-image {
+  cursor: zoom-in; /* Cursor de "zoom" para indicar que es clickeable */
+  transition: transform 0.2s ease-in-out; /* Pequeña animación al pasar el mouse */
+}
+
+.clickable-image:hover {
+  transform: scale(1.01); /* Ligeramente más grande al pasar el mouse */
+}
+
+/* Estilos para la galería de miniaturas */
+.thumbnail-gallery {
+  margin-top: 20px; /* Espacio entre la imagen principal y las miniaturas */
+  display: flex; /* CRÍTICO: Usa flexbox para alinear las miniaturas horizontalmente */
+  flex-wrap: wrap; /* Permite que las miniaturas se envuelvan a la siguiente línea si no caben */
+  gap: 10px; /* Espacio entre las miniaturas */
+  justify-content: center; /* Centra las miniaturas horizontalmente */
+}
+
+.thumbnail-wrapper {
+  width: 90px; /* Ancho fijo para cada miniatura */
+  height: 90px; /* Altura fija para cada miniatura */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+  border-radius: 5px; /* Bordes redondeados para las miniaturas */
+  border: 1px solid #ddd; /* Borde por defecto */
+  cursor: pointer; /* Indica que es clickeable */
+  transition: border-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Transición suave al pasar el ratón */
+}
+
+/* Estilo para la miniatura actualmente seleccionada */
+.thumbnail-wrapper.selected-thumbnail {
+  border-color: #28a745; /* Color para la miniatura seleccionada (ej. verde de Bootstrap) */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Sombra sutil para resaltar */
+}
+
+.thumbnail-wrapper:hover {
+  border-color: #007bff; /* Borde azul al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de elevación al pasar el ratón */
+}
+
+.thumbnail-image {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de su wrapper */
+  height: 100%; /* Asegura que la imagen ocupe toda la altura de su wrapper */
+  object-fit: cover; /* CRÍTICO: Escala la imagen para que cubra completamente el contenedor, recortando si es necesario. */
+}
+
+/* Estilos para la tarjeta de información de la subasta */
+.auction-info-card {
+  border: 1px solid #e0e0e0; /* Borde general */
+  border-left: 5px solid #007bff; /* Borde izquierdo distintivo en azul */
+  background-color: #f8f9fa; /* Fondo ligeramente gris para la tarjeta */
+  padding: 20px;
+}
+
+.auction-info-card .card-title {
+  color: #007bff; /* Color azul para el título de la tarjeta */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.auction-info-card .card-text strong {
+  color: #333; /* Color más oscuro para las etiquetas */
+}
+
+/* Estilos para los iconos de Bootstrap */
+.auction-info-card .bi {
+  vertical-align: middle; /* Alinea los iconos con el texto */
+  margin-right: 8px; /* Espacio a la derecha de los iconos */
+  color: #555; /* Color sutil para los iconos */
+}
+
+
+/* Las imágenes reales dentro de los items del carrusel */
+.modal-carousel-image {
+  max-width: 35% !important; /* La imagen no excede el ancho de su contenedor */
+  max-height: 20% !important; /* LA CLAVE: La imagen no excede la altura de su contenedor (el carousel-item) */
+  width: auto !important; /* Mantiene la proporción de la imagen */
+  object-fit: contain !important; /* Asegura que la imagen completa se vea sin recortar */
+  display: block !important;
+  margin: 0 auto !important; /* Centra la imagen horizontalmente */
+}
+
+/* Controles del carrusel (flechas) */
+/* Controles del carrusel (flechas) */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+  /* Posicionamiento para que estén sobre la imagen, si no lo están ya */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Asegura que estén por encima de la imagen */
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Estilos específicos para los iconos de las flechas SVG */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  display: inline-block;
+  width: 3rem; /* Aumentado el tamaño del icono para mayor visibilidad */
+  height: 3rem; /* Aumentado el tamaño del icono para mayor visibilidad */
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: none; /* Asegura que no haya filtros que lo oculten o distorsionen */
+}
+
+/* Asegura que los iconos de Bootstrap sean visibles (flechas blancas) */
+/* Usamos !important para intentar forzar el color, en caso de conflicto */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* === ESTILOS PARA LOS INDICADORES DEL CARRUSEL (los puntos de abajo) === */
+.carousel-indicators {
+  position: absolute; /* Posicionamiento absoluto respecto al carrusel */
+  bottom: 10px; /* Separación desde la parte inferior del carrusel */
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  display: flex;
+  justify-content: center;
+  list-style: none; /* Quita los puntos de lista por defecto */
+  padding: 0;
+  margin: 0;
+  z-index: 10; /* Asegura que estén por encima de la imagen */
+}
+
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 12px; /* Ancho del indicador */
+  height: 12px; /* Alto del indicador */
+  padding: 0;
+  margin-right: 6px; /* Espacio entre indicadores */
+  margin-left: 6px; /* Espacio entre indicadores */
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #fff; /* Color de los indicadores (blanco) */
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 50%; /* Hacerlos circulares */
+  opacity: 0.5; /* Opacidad para los indicadores no activos */
+  transition: opacity 0.6s ease;
+}
+
+.carousel-indicators .active {
+  opacity: 1; /* Opacidad completa para el indicador activo */
+  background-color: #007bff; /* Color diferente para el indicador activo (azul de Bootstrap) */
+}
+
+/* Estilo para cuando no hay imágenes en la galería del modal */
+.modal-body .text-center img {
+    max-width: 30px !important;
+    height: auto !important;
+    margin-top: 20px !important;
+}
+
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 767.98px) {
+  /* ... (Mantén tus estilos responsive existentes para el contenedor principal, etc.) ... */
+
+  /* Ajustes específicos para el modal en móviles */
+  .modal.show .modal-dialog {
+    max-width: 78vw !important;
+    height: 68vh !important;
+    margin: 1vh auto !important;
+  } 
+
+  
+}

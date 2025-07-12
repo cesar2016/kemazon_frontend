@@ -1,0 +1,108 @@
+/* src/components/tables/BidHistory.css */
+
+/* Asegura que el contenedor del título (H4) use flexbox para alinear el texto y el icono */
+.bid-history-title-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos dentro del h4 */
+  margin-bottom: 0;
+}
+
+/* Contenedor relativo para la campana y la burbuja (permite superposición) */
+.bell-and-bubble-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px; /* Espacio a la derecha del texto "Historial de Ofertas" */
+  line-height: 1; /* Ayuda a la alineación vertical */
+  cursor: pointer; /* Para indicar que el tooltip se activará */
+}
+
+/* Estilo para el icono de la campana */
+.bell-icon {
+  font-size: 1.2rem; /* Tamaño del icono de la campana */
+  color: #a0a0a0; /* Color gris claro para la campana */
+  vertical-align: middle; /* Alineación con el texto del título */
+  /* Si el icono 'Bell' de react-bootstrap-icons no tiene el círculo de la imagen 57465f.png,
+     y quieres replicarlo con CSS, podrías intentar algo como esto: */
+  /*
+  border: 1px solid #a0a0a0;
+  border-radius: 50%;
+  padding: 2px;
+  */
+  /* Pero es más probable que la imagen 57465f.png sea el icono Bell cuando no hay notificaciones
+     y que el círculo sea parte del icono o un efecto de alguna librería global. */
+}
+
+/* Estilo para la burbuja de notificación roja (cuando hay notificaciones) */
+/* La clase 'notification-bubble' se define en NotificationBubble.css */
+/* Pero aquí ajustamos su posición cuando está DENTRO de bell-and-bubble-container */
+.bell-and-bubble-container .notification-bubble {
+  position: absolute; /* Posicionamiento absoluto respecto a .bell-and-bubble-container */
+  top: -8px; /* Mueve el globito hacia arriba */
+  right: -8px; /* Mueve el globito hacia la derecha */
+  min-width: 18px; /* Asegura el tamaño del círculo */
+  height: 18px; /* Asegura el tamaño del círculo */
+  font-size: 0.65rem; /* Tamaño del número dentro del globito */
+  padding: 0; /* Elimina padding adicional para que el tamaño sea preciso */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+}
+
+
+/* --- Otros estilos existentes para BidHistory (probablemente ya los tienes) --- */
+
+.card-header {
+  padding: 1rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f8f9fa; /* Un fondo claro para el encabezado */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: calc(0.375rem - 1px) calc(0.375rem - 1px) 0 0;
+}
+
+.bid-history-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.bid-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.bid-item:last-child {
+  border-bottom: none;
+}
+
+.winner-bid {
+  background-color: #014b61; /* Fondo verde claro para la oferta ganadora */
+  border-left: 5px solid #f0730d; /* Borde izquierdo verde */   
+  color: white;
+}
+
+.winner-tag {
+  font-size: 0.75rem;
+  padding: 0.2em 0.6em;
+  border-radius: 0.25rem;
+  background-color: #f0730d !important;
+  color: white;
+}
+
+.bid-amount {
+  font-size: 1.1rem;
+  color: #007bff; /* Color azul para el monto */
+}
+
+.bid-user-info {
+  font-weight: bold;
+}
+
+.bid-timestamp {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+.pagination {
+  margin-top: 1rem;
+}

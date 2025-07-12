@@ -1,0 +1,14 @@
+/* src/components/user/UserProductsTable.css */
+
+.product-image-thumbnail {
+  width: 50px; /* Tamaño de la miniatura */
+  height: 50px; /* Tamaño de la miniatura */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  border: 1px solid #ddd; /* Opcional: un borde suave */
+  box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Opcional: una sombra sutil */
+}
+
+.action-button-group .btn {
+  margin-right: 5px; /* Espacio entre los botones de acción */
+}

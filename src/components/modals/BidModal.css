@@ -1,0 +1,93 @@
+/* src/components/modals/BidModal.css */
+
+/* Estilos para el fondo del modal */
+.modal-content.bid-modal-custom {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #fff; /* Texto blanco por defecto */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Header del modal */
+.bid-modal-custom .modal-header {
+  border-bottom: 1px solid #333; /* Borde sutil */
+}
+
+.bid-modal-custom .modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Body del modal */
+.bid-modal-custom .modal-body {
+  padding: 2rem;
+}
+
+/* Input de oferta */
+.bid-modal-custom .form-control-bid {
+  background-color: #2b2b2b !important; /* Un poco más claro que el fondo del modal */
+  color: #fff !important;
+  border: 1px solid #444 !important;
+  font-weight: bold;
+  font-size: 1.8rem !important;
+  text-align: center !important;
+  padding: 1rem 0.75rem !important;
+  height: auto; /* Ajustar altura automáticamente */
+}
+
+.bid-modal-custom .input-group-text {
+  background-color: #2b2b2b !important;
+  color: #00bcd4 !important; /* Color turquesa para el símbolo de dólar */
+  border: 1px solid #444 !important;
+  border-right: none !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Botones */
+.bid-modal-custom .btn-send-bid {
+  background-color: #00bcd4; /* Color azul turquesa */
+  border-color: #00bcd4;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.bid-modal-custom .btn-send-bid:hover {
+  background-color: #00a0b0;
+  border-color: #00a0b0;
+}
+
+.bid-modal-custom .btn-exit-bid {
+  background-color: #4a4a4a; /* Gris oscuro para Salir */
+  border-color: #4a4a4a;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.bid-modal-custom .btn-exit-bid:hover {
+  background-color: #6a6a6a;
+  border-color: #6a6a6a;
+}
+
+/* Switch de autobid */
+.bid-modal-custom .form-check-input:checked {
+  background-color: #28a745; /* Verde para activo */
+  border-color: #28a745;
+}
+
+.bid-modal-custom .form-check-input {
+  background-color: #dc3545; /* Rojo para inactivo */
+  border-color: #dc3545;
+}
+
+.bid-modal-custom .form-check-label {
+    margin-left: 0.5rem; /* Espacio entre el switch y el label */
+}
+
+/* Texto de "Más info sobre oferta automática" */
+.bid-modal-custom .text-warning {
+    color: #ffc107 !important; /* Amarillo para el texto */
+    font-size: 0.85rem;
+}

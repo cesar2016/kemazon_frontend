@@ -1,0 +1,72 @@
+/* src/components/SuggestionCardsSection.css */
+
+/* Para pantallas muy grandes (1200px en adelante) */
+.custom-card-col {
+  flex: 0 0 auto; /* No crecerá ni se encogerá */
+  width: 20%;    /* 100% / 5 = 20%, para que quepan 5 */
+  max-width: 20%; /* Asegura que no exceda el 20% */
+  /* Mantén el padding estándar de Bootstrap para el espaciado entre columnas */
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  padding-right: calc(var(--bs-gutter-x) * .5);
+}
+
+/* Ajustes para pantallas 'lg' (992px - 1199.98px) - 4 por fila */
+@media (max-width: 1199.98px) {
+  .custom-card-col {
+    width: 25%; /* 100% / 4 = 25% */
+    max-width: 25%;
+  }
+}
+
+/* Ajustes para pantallas 'md' (768px - 991.98px) - 3 por fila */
+@media (max-width: 991.98px) {
+  .custom-card-col {
+    width: 33.333%; /* 100% / 3 = 33.333% */
+    max-width: 33.333%;
+  }
+}
+
+/* Ajustes para pantallas 'sm' (576px - 767.98px) - 2 por fila */
+@media (max-width: 767.98px) {
+  .custom-card-col {
+    width: 50%; /* 100% / 2 = 50% */
+    max-width: 50%;
+  }
+}
+
+/* Ajustes para pantallas 'xs' (menos de 576px) - 1 por fila */
+@media (max-width: 575.98px) {
+  .custom-card-col {
+    width: 100%; /* 100% / 1 = 100% */
+    max-width: 100%;
+  }
+}
+
+/* --- ESTILOS DE LA TARJETA Y EFECTO DE HOVER --- */
+
+/* Estilos para el componente Card de React-Bootstrap */
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave para el efecto */
+  cursor: pointer; /* Indica que es clickeable */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que el contenido no se salga */
+}
+
+/* Efecto de HOVER en la Card */
+.card:hover {
+  transform: scale(1.03); /* Ligeramente más grande (zoom) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  z-index: 10; /* Eleva la tarjeta para que no quede detrás de las vecinas */
+  position: relative; /* Necesario para z-index */
+}
+
+/* Estilos para el Link que envuelve la tarjeta en SuggestionCard.js */
+/* Usamos el selector de clase general '.card-link' si tu Link tiene esa clase.
+   Si no, y envuelve directamente la Card, los estilos de Card ya se aplican.
+   De todos modos, es buena práctica asegurar que el texto del enlace no se subraye.
+*/
+.card-link { /* Asumiendo que el componente <Link> en SuggestionCard.js tiene esta clase o que los estilos de a se aplican */
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto de la Card */
+}

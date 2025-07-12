@@ -1,0 +1,49 @@
+/* src/components/common/CountdownTimer.css */
+.countdown-container {
+  background-color: #28a745; /* Verde como en la imagen */
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif; /* O una fuente más adecuada */
+  display: flex;
+  gap: 15px; /* Espacio entre los segmentos */
+  width: fit-content; /* Ajusta el ancho al contenido */
+  margin: 10px auto; /* Centra el contador */
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.countdown-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1; /* Elimina espacio extra entre valor y etiqueta */
+}
+
+.countdown-value {
+  font-size: 1.6em; /* Un poco más grande para el número */
+}
+
+.countdown-label {
+  font-size: 0.7em; /* Más pequeño para la etiqueta */
+  opacity: 0.8;
+  margin-top: 3px;
+}
+
+.countdown-finished {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+/* Pequeños ajustes para responsividad si es necesario */
+@media (max-width: 576px) {
+  .countdown-container {
+    font-size: 1rem;
+    gap: 10px;
+  }
+  .countdown-value {
+    font-size: 1.4em;
+  }
+}

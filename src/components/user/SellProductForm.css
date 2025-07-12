@@ -1,0 +1,15 @@
+/* src/components/user/SellProductForm.css */
+
+/* Clase para el botón de eliminar imagen (Botón con la X) */
+.delete-image-button {
+  /* Opacidad inicial del 50% */
+  opacity: 0.5;
+  /* Transición suave para la opacidad */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Estado hover */
+.delete-image-button:hover {
+  /* Al hacer hover, la opacidad se vuelve 1 (completamente visible) */
+  opacity: 1; /* Eliminamos !important si no es estrictamente necesario, pero puedes añadirlo si aún no funciona */
+}
