@@ -71,7 +71,7 @@ const Header = () => {
                 <>
                   <Nav.Link as={Link} to="/sell-product" style={{ color: 'white' }}>Vender</Nav.Link>
                   <Nav.Link as={Link} to="/my-products" style={{ color: 'white' }}>Mis articulos</Nav.Link>
-                  <Nav.Link as={Link} to="#miscompras" style={{ color: 'white' }}>Mis compras</Nav.Link>
+                  {/* <Nav.Link as={Link} to="#miscompras" style={{ color: 'white' }}>Mis compras</Nav.Link> */}
                   {/* <Nav.Link as={Link} to="#favoritos" style={{ color: 'white' }}>Favoritos</Nav.Link> */}
                   
                   

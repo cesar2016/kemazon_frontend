@@ -30,7 +30,13 @@ function HomePage() {
 
         {/* Ruta para el Dashboard del usuario */}
         <Route path="/dashboard" element={<Dashboard />} />
+        
+        {/* Ruta para crear un producto */}
         <Route path="/sell-product" element={<SellProductForm />} />
+        
+        {/* NUEVA RUTA: Ruta para editar un producto. :productId es un parámetro de URL */}
+        <Route path="/edit-product/:productId" element={<SellProductForm />} />
+
         <Route path="/my-products" element={<UserProductsTable />} />
         <Route path="/product-detail/:productId" element={<ProductDetail />} />
 

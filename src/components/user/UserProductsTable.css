@@ -12,3 +12,16 @@
 .action-button-group .btn {
   margin-right: 5px; /* Espacio entre los botones de acción */
 }
+
+/* src/components/user/UserProductsTable.css */
+
+/* ... tus estilos existentes ... */
+
+.product-description-cell {
+  max-width: 250px; /* Ajusta este valor según el ancho deseado para la columna */
+  white-space: nowrap; /* Evita que el texto se salte de línea */
+  overflow: hidden;    /* Oculta el texto que excede el ancho máximo */
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto oculto */   
+  position: relative; /* Necesario para que el tooltip de hover se posicione correctamente */
+}
+ 
